@@ -1,4 +1,4 @@
-package Projeto.BackEnd.pessoas;
+package Projeto.BackEnd.atributos.pessoas;
 
 public class Pessoa_Vendedora extends Pessoas{
    

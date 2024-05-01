@@ -1,10 +1,10 @@
 package Projeto.BackEnd.pessoas;
 
 public class Pessoas {
-    String nomeUsuario;
-    String nomeLogin;
-    String senhaUsuario;
-    String enderecoUsuario;
+    private String nomeUsuario;
+    private String nomeLogin;
+    private String senhaUsuario;
+    private String enderecoUsuario;
 
     public String getNomeUsuario() {
         return nomeUsuario;

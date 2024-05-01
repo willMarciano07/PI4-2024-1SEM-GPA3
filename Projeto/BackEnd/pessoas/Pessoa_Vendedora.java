@@ -1,6 +1,7 @@
 package Projeto.BackEnd.pessoas;
 
 public class Pessoa_Vendedora extends Pessoas{
+   
     private int id_pessoaVendedora;
 
     public int getId_pessoaVendedora() {

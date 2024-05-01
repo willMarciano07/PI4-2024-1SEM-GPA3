@@ -1,6 +1,7 @@
 package Projeto.BackEnd.pessoas;
 
 public class Pessoas {
+    
     private String nomeUsuario;
     private String nomeLogin;
     private String senhaUsuario;

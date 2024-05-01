@@ -9,7 +9,7 @@ public class Conexao {
     public Connection getConexao() {
         try {
             //Endereço do database
-            String endereco = "jdbc:mysql://localhost:3306/ThinkySys_Senac_GPA3";
+            String endereco = "jdbc:mysql://127.0.0.1:3306/thinkySys_senac_gpa3";
             //Usuario 
             String usuario = "ThinkSys_Senac";
             //Senha para se acessar o Banco de dados

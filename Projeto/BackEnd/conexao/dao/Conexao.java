@@ -1,4 +1,4 @@
-package Projeto.BackEnd.conexao;
+package Projeto.BackEnd.conexao.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -29,3 +29,4 @@ public class Conexao {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
+

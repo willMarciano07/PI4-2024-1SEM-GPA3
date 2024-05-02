@@ -1,6 +1,6 @@
-CREATE DATABASE ThynkySys_Senac_GPA3;
+CREATE DATABASE ThinkySys_Senac_GPA3;
 
-USE ThynkySys_Senac_GPA3;
+USE ThinkySys_Senac_GPA3;
 
 CREATE TABLE Pessoa_Vendedora(
 id_pessoaVendedora INT NOT NULL AUTO_INCREMENT,
@@ -30,6 +30,8 @@ PRIMARY KEY (id_produto)
 CREATE TABLE Vendas(
 id_vendaProduto INT NOT NULL AUTO_INCREMENT,
 id_produto INT,
+id_pessoaUsuario INT,
+quantidadeProduto INT,
 valorTotal DOUBLE,
 PRIMARY KEY (id_vendaProduto),
 FOREIGN KEY (id_produto) REFERENCES Produto(id_produto)
@@ -40,9 +42,10 @@ id_compra INT NOT NULL AUTO_INCREMENT,
 id_produto INT,
 id_pessoaUsuario INT,
 id_vendaProduto INT,
+quantidadeProduto INT,
+valorTotal DOUBLE,
 PRIMARY KEY (id_compra),
 FOREIGN KEY (id_produto) REFERENCES Produto(id_produto),
 FOREIGN KEY (id_pessoaUsuario) REFERENCES Pessoa_Usuario(id_pessoaUsuario),
 FOREIGN KEY (id_vendaProduto) REFERENCES Vendas(id_vendaProduto)
 );
-

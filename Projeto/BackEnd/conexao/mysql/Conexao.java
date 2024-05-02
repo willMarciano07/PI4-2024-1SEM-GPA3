@@ -1,4 +1,4 @@
-package Projeto.BackEnd.conexao.dao;
+package Projeto.BackEnd.conexao.mysql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

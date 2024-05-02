@@ -1,6 +1,7 @@
 package Projeto.BackEnd.conexao.dao;
 
 import Projeto.BackEnd.atributos.pessoas.Pessoa_Usuario;
+import Projeto.BackEnd.conexao.mysql.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

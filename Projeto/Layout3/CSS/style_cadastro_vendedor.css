@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -7,16 +7,16 @@
 }
 
 /*Definição de cores*/
-:root{
+:root {
     --verde: #0f6226;
-    --bege : #f9f1f1;
+    --bege: #f9f1f1;
     --vermelho: #eb493a;
     --amarelo: #ffbf00;
     --preto: #000;
 }
 
 
-.LoginC{
+.LoginC {
     background-color: var(--bege);
     position: absolute;
     top: 50%;
@@ -25,17 +25,34 @@
     padding: 80px;
     border-radius: 15px;
     color: var(--verde);
+    text-align: center;
 }
 
-.Cadastro{
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.divisaoLinha{
+    display: flex;
+    gap: 10px; 
+    justify-content: center;
+    flex-direction: row;
+}
+
+.Cadastro {
     padding: 10px;
     border: 1px solid;
     border-color: var(--verde);
     outline: none;
     font-size: 15px;
+    flex: 1;
+    min-width: 200px;
+    box-sizing: border-box;
 }
 
-.botaoLogin{
+.botaoLogin {
     width: 200px;
     height: 35px;
     border-radius: 0px 4px 4px 0px;
@@ -43,16 +60,18 @@
     background: var(--verde);
     color: var(--bege);
     font-size: 1.1em;
-    transition: background-color 0.2s ease, color 0.2s ease; /* Melhorar a transição */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    /* Melhorar a transição */
     cursor: pointer;
+    margin-top: 20px;
 }
 
-.botaoLogin:hover{
+.botaoLogin:hover {
     background: var(--amarelo);
     color: var(--vermelho);
 }
 
-.imagemLogin{
-    display: block; 
+.imagemLogin {
+    display: block;
     margin: 0 auto;
 }

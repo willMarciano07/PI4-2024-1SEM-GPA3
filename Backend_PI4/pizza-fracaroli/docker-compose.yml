@@ -1,0 +1,25 @@
+version: '3.5'
+ 
+services:
+  pizza-fracaroli-db-mysql:
+    image: mysql:8.0
+    container_name: pizza-fracaroli-db-mysql
+    command: mysqld --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: pizza-fracaroli100*
+      MYSQL_USER: pizza-fracaroli
+      MYSQL_DATABASE: pizza-fracaroli
+    networks:
+      - pizza-fracaroli-network
+    volumes:
+      - pizza-fracaroli-db-mysql:/var/lib/mysql
+ 
+volumes:
+  pizza-fracaroli-db-mysql:
+networks:
+  pizza-fracaroli-network:
+    name: pizza-fracaroli-network
+    driver: bridge

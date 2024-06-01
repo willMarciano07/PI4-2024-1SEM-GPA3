@@ -1,0 +1,2 @@
+DROP SCHEMA IF EXISTS `pizza-fracaroli`;
+CREATE SCHEMA IF NOT EXISTS `pizza-fracaroli` DEFAULT CHARACTER SET utf8 ;

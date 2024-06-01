@@ -1,0 +1,89 @@
+.carousel-inner{
+    height:500px
+    }
+
+@media(max-width:768px){
+        .carousel-inner{
+        height:auto
+         }
+        }
+
+ul {
+
+    list-style-type: none;
+
+}
+
+.btn-whatsapp {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 1px 1px 2px #888;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgb(3, 255, 24);
+}
+
+
+.fa-whatsapp {
+    margin-top: 16px;
+}
+
+#map {
+
+    height: 400px;
+  
+
+}
+
+/* Definição de cores */
+:root {
+    --branco: #fdfbfb;
+}
+
+/* ESTILO CHECK-BOX */
+.filter-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    padding: 20px;
+    background: var(--b);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.378);
+}
+
+.filter-container label {
+    font-size: 1.2rem;
+    margin-right: 20px; 
+    margin-bottom: 10px; 
+    white-space: nowrap; 
+    position: relative; 
+}
+
+.filter-container label::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -15px; 
+    width: 2px; 
+    background-color: #ccc; 
+}
+
+.filter-container label:last-child::after {
+    display: none; 
+}
+
+/* ESTILO CARD */
+.card{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.378);
+}

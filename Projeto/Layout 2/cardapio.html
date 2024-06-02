@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script async="" src="../API_Client/APIClient.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -15,25 +16,33 @@
     <script>
         // Função para realizar a requisição GET à API
         function obterCategorias() {
-            const urlAPI = "3306:3306/categorias";
+            const host = "http://localhost:8080";
+            const apiClient = new APIClient(host);
+            // GET request
+            apiClient.get('/categorias?embedItens=true')
+            .then(data => {
+                console.log(data);
+                const listaCategorias = document.getElementById("categorias");
+                listaCategorias.innerHTML = ""; // Limpa o conteúdo anterior
 
-            fetch(urlAPI)
-                .then(resposta => resposta.json()) // Converte a resposta para JSON
-                .then(dados => {
-                    // Exibe os dados na página
-                    const listaCategorias = document.getElementById("resposta-api");
-                    listaCategorias.innerHTML = ""; // Limpa o conteúdo anterior
-
-                    dados.forEach(categoria => {
-                        const itemLista = document.createElement("li");
-                        itemLista.textContent = categoria.nome;
-                        listaCategorias.appendChild(itemLista);
-                    });
-                })
-                .catch(erro => console.error(erro)); // Trata erros
+                
+                data.forEach(categoria => {
+                    const itemLista = document.createElement("div");
+                    itemLista.innerHTML = "<div class=row><div class=col><div class='border-bottom h2 text-center'><h2>"+categoria.nome+"</h2></div></div></div>";
+                    
+                    const itensCategoria = document.createElement("div");
+                    var linha = "<div class='row'>";
+                    var coluna = "";
+                    categoria.itens.forEach(item =>  {
+                        coluna = coluna+"<div class=col><center><div class=card style=width:18rem><img alt=... class=card-img-top src="+item.imagem+"><div class=card-body><h5 class='card-title text-center'>"+item.titulo+"</h5><p class=card-text>"+item.descricao+"<p class=card-text><b>"+item.preco+"</b></div></div></center></div>";
+                    })
+                    itensCategoria.innerHTML = linha+coluna+"</div>";
+                    itemLista.appendChild(itensCategoria);
+                    listaCategorias.appendChild(itemLista);
+                });
+            })
+            .catch(error => console.error(error));
         }
-
-        // Chama a função para obter as categorias ao carregar a página
         obterCategorias();
     </script>
 
@@ -68,143 +77,10 @@
 
     <main>
         <div class="container my-5">
-            <div class="row">
-                <div class="col">
-                    <div class="h2 border-bottom text-center">
-                        <h2>Pizzas Salgadas</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row my-4">
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Calabresa</h5>
-                            <p class="card-text">Coberta com fatias de calabresa, cebola e azeitonas pretas.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Frango Catupiry</h5>
-                            <p class="card-text">Frango cuidadosamente desfiado, coberto com azeitonas e catupiry legitimo, gratinado com parmesão.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Marguerita</h5>
-                            <p class="card-text">Especialidade da casa, coberta com mussarela de búfala, manjericão, parmesão e azeitonas.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Quatro Queijos</h5>
-                            <p class="card-text">Coberta com a combinação de mussarela, gorgonzola, parmesão e provolone, e azeitonas.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row my-4">
-                <div class="col">
-                    <div class="h2 border-bottom text-center">
-                        <h2>Pizzas Vegetarianas</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Brócolis com Alho</h5>
-                            <p class="card-text">Molho de tomate, mussarela, brócolis, alho fatiado e azeitonas.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Caprese</h5>
-                            <p class="card-text">Molho de tomate, mussarela de búfala, tomate-cereja, manjericão, azeita extra virgem e redução de balsâmico.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Rúcula</h5>
-                            <p class="card-text">Mussarela de búfala, rúcula, tomate seco e parmesão.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Vegana</h5>
-                            <p class="card-text">Molho de tomate, mussarela, abobrinha, berinjela, pimentão, cebola, azeitonas e orégano.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row my-4">
-                <div class="col">
-                    <div class="h2 border-bottom text-center">
-                        <h2>Bebidas</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Refrigerantes 2L</h5>
-                            <p class="card-text">Coca-cola, Coca-cola Zero, Guaraná Antartica e Sprite.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Refrigerantes 600ML</h5>
-                            <p class="card-text">Coca-cola, Coca-cola Zero, Guaraná Antartica e Sprite.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Sucos 1L</h5>
-                            <p class="card-text">Del Valle, Dafruta e Maguary.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Cervejas</h5>
-                            <p class="card-text">Heineken, Original e Stella Artois.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
+            <div id="categorias"> 
+                
+            </div>
         <a class="btn-whatsapp" href="https://wa.me/5598123456789" target="_blank">
             <i class="fa fa-whatsapp"></i>
           </a>

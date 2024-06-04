@@ -59,72 +59,20 @@
                     <div class="col">
 
                         <div class="card mb-5">
-
-                            <div class="card-body">
-
-                                <h5 class="text-center"> Dúvidas, informações, sugestões, etc são bem vindas!</h5>
-                                <div class="mb-3 my-4">
-
-                                    <label for="nomeInputLabel" class="form-label fw-bold">Nome</label>
-                                    <input type="text" class="form-control" id="nomeInputId">
-
-                                </div>
-
-                                <div class="mb-3 my-4">
-
-                                    <label for="telefoneInputLabel" class="form-label fw-bold">Telefone</label>
-                                    <input type="text" class="form-control" id="telefoneInputId">
-
-                                </div>
-
-                                <div class="mb-3 my-4">
-
-                                    <label for="emailInputLabel" class="form-label fw-bold">E-mail</label>
-                                    <input type="text" class="form-control" id="emailInputId">
-
-                                </div>
-
-                                <div class="form-check">
-
-                                    <input class="form-check-input" type="radio" name="radioPadrao1" id="radio1">
-                                    <label class="form-check-label" for="radio1Label">Informações</label>
-
-                                </div>
-
-                                <div class="form-check">
-
-                                    <input class="form-check-input" type="radio" name="radioPadrao2" id="radio2">
-                                    <label class="form-check-label" for="radio2Label">Dúvidas</label>
-
-                                </div>
-
-                                <div class="form-check">
-
-                                    <input class="form-check-input" type="radio" name="radioPadrao3" id="radio3">
-                                    <label class="form-check-label" for="radio3Label">Sugestões</label>
-
-                                </div>
-
-
-                                <div class="mb-3 my-4">
-
-                                    <label for="telefoneInputLabel" class="form-label fw-bold">Mensagem</label>
-                                    <textarea class="form-control" id="emailInputId" rows="10"></textarea>
-
-                                </div>
-
-                                <div class="d-grid gap-2">
-
-                                    <button class="btn btn-dark" type="button">Enviar</button>
-
-                                </div>
-
-
-                            </div>
-
-                        </div>
-
-
+                            <section>
+                                <form action="https://api.staticforms.xyz/submit" method="post">
+                                    <label>Nome</label>
+                                    <input type="text" name="name" placeholder="Digite seu nome" autocomplete="off" required>
+                                    <label>Email</label>
+                                    <input type="email" name="email" placeholder="Digite seu email" autocomplete="off" required>
+                                    <label>Mensagem</label>
+                                    <textarea name="message" cols="30" rows="10" placeholder="Digite sua mensagem" required></textarea>
+                                    <button type="submit">Enviar</button>
+                        
+                                    <input type="hidden" name="accessKey" value="f2b7904f-9bc0-4194-975b-566a84374b79">
+                                    <input type="text" name="replyTo" value="matheusfracaroli@hotmail.com">
+                                </form>
+                            </section>
                     </div>
 
                 </div>

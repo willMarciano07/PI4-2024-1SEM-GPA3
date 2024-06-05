@@ -1,4 +1,4 @@
-package Projeto.BackEnd.atributos.pessoas;
+package Backend_PI4.pessoas;
 
 public class Pessoas {
     

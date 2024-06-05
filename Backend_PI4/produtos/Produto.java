@@ -1,5 +1,5 @@
-package Projeto.BackEnd.atributos.produtos;
-import Projeto.BackEnd.atributos.pessoas.Pessoa_Vendedora;
+package Backend_PI4.produtos;
+import Ba.atributos.pessoas.Pessoa_Vendedora;
 
 public class Produto extends Pessoa_Vendedora {
     

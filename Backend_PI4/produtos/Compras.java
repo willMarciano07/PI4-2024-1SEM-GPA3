@@ -1,4 +1,4 @@
-package Projeto.BackEnd.atributos.produtos;
+package Backend_PI4.produtos;
 
 public class Compras {
     

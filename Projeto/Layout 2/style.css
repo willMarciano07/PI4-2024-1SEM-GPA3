@@ -1,3 +1,16 @@
+header {
+
+    background-color: #0A1627;
+
+}
+
+footer {
+
+    background-color: #0A1627;
+    color: white;
+
+}
+
 .carousel-inner{
     height:500px
     }

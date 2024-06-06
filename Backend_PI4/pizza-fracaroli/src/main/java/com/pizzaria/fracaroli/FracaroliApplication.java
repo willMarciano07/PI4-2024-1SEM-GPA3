@@ -10,5 +10,3 @@ public class FracaroliApplication {
 		SpringApplication.run(FracaroliApplication.class, args);
 	}
 }
-
-
